@@ -1,0 +1,104 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.sanesean.csci571_hw9.searchFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Keyword"/>
+    <TextView
+        android:id="@+id/keywordValidate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please enter mandatory field"
+        android:textColor="#FF0000"
+        android:visibility="gone"/>
+    <EditText
+        android:id="@+id/keyword"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:inputType="text"
+        android:hint="Enter keyword"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Category"/>
+    <Spinner
+        android:id="@+id/categorySpinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/categoryVals"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Distance(in miles)"/>
+    <EditText
+        android:id="@+id/distance"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:inputType="number"
+        android:hint="Enter distance(default 10 miles)"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="From"/>
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/radio">
+        <RadioButton android:id="@+id/here"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current location"
+            android:checked="true"/>
+        <RadioButton android:id="@+id/other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other, Specify Location"/>
+    </RadioGroup>
+    <TextView
+        android:id="@+id/customValidate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FF0000"
+        android:visibility="gone"
+        android:layout_marginLeft="35dp"
+        android:text="Please enter mandatory field"/>
+    <AutoCompleteTextView
+        android:id="@+id/custom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="35dp"
+        android:enabled="false"
+        android:hint="Type in the Location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/custom">
+    </AutoCompleteTextView>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+        <Button
+            android:id="@+id/search"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="SEARCH" />
+        <Button
+            android:id="@+id/clear"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="CLEAR" />
+    </LinearLayout>
+</LinearLayout>
